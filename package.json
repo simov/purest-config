@@ -1,0 +1,38 @@
+{
+  "name": "@purest/config",
+  "version": "0.1.0",
+  "description": "",
+
+  "keywords": [
+
+  ],
+
+  "license": "MIT",
+  "homepage": "https://github.com/purest-org/config",
+
+  "author": "Simeon Velichkov <simeonvelichkov@gmail.com> (http://simov.github.io)",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/purest-org/config.git"
+  },
+
+  "dependencies": {},
+
+  "devDependencies": {},
+
+  "main": "index.js",
+
+  "files": [
+    "lib/",
+    "LICENSE",
+    "README.md",
+    "index.js"
+  ],
+
+  "scripts": {
+    "test"      : "npm run test-ci",
+    "test-ci"   : "mocha",
+    "test-cov"  : "istanbul cover _mocha"
+  }
+}
