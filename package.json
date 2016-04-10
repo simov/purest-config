@@ -1,38 +1,43 @@
 {
   "name": "@purest/config",
   "version": "0.1.0",
-  "description": "",
-
+  "description": "Generic REST API Client Library Configuration",
   "keywords": [
-
+    "rest",
+    "restful",
+    "api",
+    "http",
+    "https",
+    "client",
+    "configuration"
   ],
-
   "license": "MIT",
-  "homepage": "https://github.com/purest-org/config",
-
+  "homepage": "https://github.com/purestjs/config",
   "author": "Simeon Velichkov <simeonvelichkov@gmail.com> (http://simov.github.io)",
-
   "repository": {
     "type": "git",
-    "url": "https://github.com/purest-org/config.git"
+    "url": "https://github.com/purestjs/config.git"
   },
-
-  "dependencies": {},
-
-  "devDependencies": {},
-
+  "dependencies": {
+    "extend": "^3.0.0"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.9",
+    "eslint": "^2.7.0",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5"
+  },
   "main": "index.js",
-
   "files": [
     "lib/",
     "LICENSE",
     "README.md",
     "index.js"
   ],
-
   "scripts": {
-    "test"      : "npm run test-ci",
-    "test-ci"   : "mocha",
-    "test-cov"  : "istanbul cover _mocha"
+    "test": "npm run lint && npm run test-ci",
+    "test-ci": "mocha test/",
+    "test-cov": "istanbul cover _mocha test/",
+    "lint": "eslint lib/ test/ && echo Lint Passed"
   }
 }
