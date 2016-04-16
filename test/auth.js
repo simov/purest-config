@@ -1,4 +1,3 @@
-'use strict'
 
 var t = require('assert')
 var init = require('../lib/init')

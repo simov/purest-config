@@ -1,4 +1,3 @@
-'use strict'
 
 var t = require('assert')
 var init = require('../lib/init')
@@ -80,7 +79,7 @@ describe('init', () => {
         domain: {path: {}}
       }
       t.throws(() => {
-        var aliases = init.aliases(provider)
+        init.aliases(provider)
       }, 'Purest: __path key is required!')
     })
     it('throw on missing __path.alias key', () => {
@@ -88,7 +87,7 @@ describe('init', () => {
         domain: {path: {__path: {}}}
       }
       t.throws(() => {
-        var aliases = init.aliases(provider)
+        init.aliases(provider)
       }, 'Purest: __path.alias key is required!')
     })
 
