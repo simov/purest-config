@@ -15,6 +15,15 @@ describe('auth', () => {
         auth.find('alias1'),
         {a: 1})
     })
+    it('return alias auth on non matching endpoints', () => {
+      var provider = {
+        domain1: {path1: {__path: {alias: 'alias1', auth: {a: 1}}, 'endpoint': {}}}
+      }
+      var auth = _auth(init.aliases(provider))
+      t.deepEqual(
+        auth.find('alias1', {url: ''}),
+        {a: 1})
+    })
 
     describe('priority', () => {
       it('endpoint: 1.regex -> 2.str -> 3.*', () => {
