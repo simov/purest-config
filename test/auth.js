@@ -73,5 +73,16 @@ describe('auth', () => {
         auth.replace(config, 'token', 'secret'),
         {oauth: {token: 'token', secret: 'secret'}})
     })
+    it('not exact value', () => {
+      var provider = {
+        domain1: {path1: {__path: {alias: 'alias1', auth:
+        {headers: {authorization: 'OAuth [0]'}}
+      }}}}
+      var auth = _auth(init.aliases(provider))
+      var config = auth.find('alias1')
+      t.deepEqual(
+        auth.replace(config, 'token'),
+        {headers: {authorization: 'OAuth token'}})
+    })
   })
 })
