@@ -14,6 +14,15 @@ describe('endpoint', () => {
       endpoint.options('alias1', {b: 2}),
       {b: 2})
   })
+  it('return request options on non matching endpoints', () => {
+    var provider = {
+      domain1: {path1: {__path: {alias: 'alias1'}, 'endpoint': {}}}
+    }
+    var endpoint = _endpoint(init.aliases(provider))
+    t.deepEqual(
+      endpoint.options('alias1', {b: 2}),
+      {b: 2})
+  })
 
   describe('types', () => {
     it('match all', () => {
